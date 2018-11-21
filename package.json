@@ -1,6 +1,6 @@
 {
   "name": "ng-dockerize",
-  "version": "1.0.2-rc.2",
+  "version": "1.0.2",
   "description": "Schematic that adds configuration to run angular in docker",
   "scripts": {
     "build": "tsc -p tsconfig.json && npm run webpack",

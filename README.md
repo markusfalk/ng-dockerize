@@ -1,28 +1,23 @@
-# Getting Started With Schematics
+# Dockerize your Angular with Schematics
 
-This repository is a basic Schematic implementation that serves as a starting point to create and publish Schematics to NPM.
+This schematic adds configuration files and shell scripts to configure and run your angular project in a docker container.
 
-### Testing
+## Usage
 
-To test locally, install `@angular-devkit/schematics-cli` globally and use the `schematics` command line tool. That tool acts the same as the `generate` command of the Angular CLI, but also has a debug mode.
+### Adjust angular project
 
-Check the documentation with
-```bash
-schematics --help
+```shell
+ng add ng-dockerize
 ```
 
-### Unit Testing
+### Build Docker Image and run it
 
-`npm run test` will run the unit tests, using Jasmine as a runner and test framework.
-
-### Publishing
-
-To publish, simply do:
-
-```bash
-npm run build
-npm publish
+```shell
+sh docker-build.sh
+docker-compose up
 ```
 
-That's it!
- 
+## Requirements
+
+* schematic compatible angular cli
+* adds a shell script. You need to be able to run it for now.

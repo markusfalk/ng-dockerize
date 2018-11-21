@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
     "ng-add": {
-      "description": "Initializes Library",
+      "description": "Add Dockerfiles to angular project",
       "factory": "./index#ngAdd"
     }
   }

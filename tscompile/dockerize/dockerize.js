@@ -7,6 +7,7 @@ function ngDockerize(_options) {
     return (tree, _context) => {
         const packageJson = fs_1.readJsonFile(tree, './package.json');
         _options.packageName = packageJson.name;
+        console.log('options', _options);
         const templateSource = schematics_1.apply(schematics_1.url('./files'), [
             schematics_1.template(Object.assign({}, core_1.strings, _options))
         ]);

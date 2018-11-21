@@ -10,6 +10,14 @@ This schematic adds configuration files and shell scripts to configure and run y
 ng add ng-dockerize
 ```
 
+### Options
+
+| option | default | description |
+| port | 9999 | external port number for your angular container |
+| registry | "" | url to docker hub or your registry |
+| username | "" | docker registry/hub username |
+| push | true | push to your registry when building |
+
 ### Build Docker Image and run it
 
 ```shell

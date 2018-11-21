@@ -7,7 +7,13 @@
     "copy:all": "npm run copy:files && npm run copy:collection",
     "copy:collection": "copyfiles ./src/collection.json ./dist --flat",
     "copy:files": "copyfiles ./src/ng-add/files/* ./dist/files --flat",
+    "postversion": "git push && git push --tags",
     "test": "npm run build && jasmine src/**/*.spec.js",
+    "tsc:watch": "tsc -p tsconfig.json --watch",
+    "tsc": "tsc",
+    "version": "npm run build && git add -A .",
+    "watch": "concurrently \"npm:tsc:watch\" \"npm:webpack:watch\"",
+    "webpack:watch": "webpack --config=./webpack.conf.js --watch",
     "webpack": "webpack --config=./webpack.conf.js"
   },
   "keywords": [

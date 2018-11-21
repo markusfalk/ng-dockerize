@@ -1,0 +1,9 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-dockerize": {
+      "description": "A blank schematic.",
+      "factory": "./ng-dockerize/index#ngDockerize"
+    }
+  }
+}

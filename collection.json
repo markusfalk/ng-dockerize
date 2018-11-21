@@ -3,7 +3,7 @@
   "schematics": {
     "ng-add": {
       "description": "Initializes Library",
-      "factory": "./index#ngAdd"
+      "factory": "./ng-add#ngAdd"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "./tscompile",
     "baseUrl": "tsconfig",
     "lib": [
       "es2018",
@@ -15,7 +15,7 @@
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "rootDir": "src/ng-add/",
+    "rootDir": "src",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,

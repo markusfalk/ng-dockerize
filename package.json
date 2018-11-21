@@ -3,11 +3,11 @@
   "version": "1.0.0-rc.1",
   "description": "A blank schematics",
   "scripts": {
-    "build": "tsc -p tsconfig.json && npm run copy:all",
-    "test": "npm run build && jasmine src/**/*.spec.js",
+    "build": "tsc -p tsconfig.json && npm run webpack",
     "copy:all": "npm run copy:files && npm run copy:collection",
     "copy:collection": "copyfiles ./src/collection.json ./dist --flat",
     "copy:files": "copyfiles ./src/ng-add/files/* ./dist/files --flat",
+    "test": "npm run build && jasmine src/**/*.spec.js",
     "webpack": "webpack --config=./webpack.conf.js"
   },
   "keywords": [

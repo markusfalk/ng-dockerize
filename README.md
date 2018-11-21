@@ -19,7 +19,7 @@ docker-compose up
 
 ### Look what you made me do
 
-Go to http://localhost:999
+Go to http://localhost:9999
 
 ## Requirements
 

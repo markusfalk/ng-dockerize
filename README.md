@@ -17,6 +17,10 @@ sh docker-build.sh
 docker-compose up
 ```
 
+### Look what you made me do
+
+Go to http://localhost:999
+
 ## Requirements
 
 * schematic compatible angular cli (tested with Angular 7)

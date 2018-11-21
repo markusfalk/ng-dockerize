@@ -19,5 +19,5 @@ docker-compose up
 
 ## Requirements
 
-* schematic compatible angular cli
+* schematic compatible angular cli (tested with Angular 7)
 * adds a shell script. You need to be able to run it for now.

@@ -1,25 +1,27 @@
-import { Rule, SchematicContext, Tree, apply, url, template, branchAndMerge, mergeWith } from '@angular-devkit/schematics';
 import { strings } from '@angular-devkit/core';
-// import { Schema as ClassOptions } from './schema';
+import {
+  apply, branchAndMerge, mergeWith, Rule, SchematicContext, template, Tree, url
+} from '@angular-devkit/schematics';
 
+import { readJsonFile } from './utils/fs';
 
-// You don't have to export the function as default. You can also have more than one rule factory
-// per file.
 export function ngDockerize(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
 
-    console.log(tree);
-    
+    const packageJson = readJsonFile<{name: string}>(tree, './package.json');
+    _options.packageName = packageJson.name;
+
     const templateSource = apply(
       url('./files'),
       [
         template({
           ...strings,
-          ..._options,
-        }),
+          ..._options
+        })
       ]
     );
- 
+
     return branchAndMerge(mergeWith(templateSource));
+
   };
 }

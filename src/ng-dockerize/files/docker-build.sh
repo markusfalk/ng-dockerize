@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t angular .
+docker build -t <%= packageName %> .

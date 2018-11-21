@@ -8,6 +8,11 @@
     "copy:collection": "copyfiles ./src/collection.json ./dist --flat",
     "copy:files": "copyfiles ./src/ng-add/files/* ./dist/files --flat",
     "test": "npm run build && jasmine src/**/*.spec.js",
+    "tsc:watch": "tsc -p tsconfig.json --watch",
+    "tsc": "tsc",
+    "version": "npm run build",
+    "watch": "concurrently \"npm:tsc:watch\" \"npm:webpack:watch\"",
+    "webpack:watch": "webpack --config=./webpack.conf.js --watch",
     "webpack": "webpack --config=./webpack.conf.js"
   },
   "keywords": [
@@ -28,6 +33,7 @@
     "typescript": "~3.1.6"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "copy": "^0.3.2",
     "copy-webpack-plugin": "^4.6.0",
     "copyfiles": "^2.1.0",

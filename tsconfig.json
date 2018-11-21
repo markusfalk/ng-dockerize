@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "baseUrl": "tsconfig",
     "lib": [
       "es2018",
@@ -14,11 +15,11 @@
     "noImplicitThis": true,
     "noUnusedParameters": true,
     "noUnusedLocals": true,
-    "rootDir": "src/",
+    "rootDir": "src/ng-add/",
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strictNullChecks": true,
+    "strict": true,
     "target": "es6",
     "types": [
       "jasmine",
@@ -29,6 +30,9 @@
     "src/**/*"
   ],
   "exclude": [
-    "src/*/files/**/*"
+    "src/*/files/**/*",
+    "src/**/*.spec.ts",
+    "src/ng-dockerize",
+    "src/utils"
   ]
 }

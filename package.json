@@ -3,8 +3,12 @@
   "version": "1.0.0-rc.1",
   "description": "A blank schematics",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "npm run build && jasmine src/**/*_spec.js"
+    "build": "tsc -p tsconfig.json && npm run copy:all",
+    "test": "npm run build && jasmine src/**/*.spec.js",
+    "copy:all": "npm run copy:files && npm run copy:collection",
+    "copy:collection": "copyfiles ./src/collection.json ./dist --flat",
+    "copy:files": "copyfiles ./src/ng-add/files/* ./dist/files --flat",
+    "webpack": "webpack --config=./webpack.conf.js"
   },
   "keywords": [
     "schematics",
@@ -13,14 +17,22 @@
   ],
   "author": "",
   "license": "MIT",
-  "schematics": "./src/collection.json",
+  "schematics": "./dist/collection.json",
   "dependencies": {
     "@angular-devkit/core": "^7.0.6",
     "@angular-devkit/schematics": "^7.0.6",
+    "@schematics/angular": "^7.0.6",
     "@types/jasmine": "^2.6.0",
     "@types/node": "^8.0.31",
     "jasmine": "^2.8.0",
     "typescript": "~3.1.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "copy": "^0.3.2",
+    "copy-webpack-plugin": "^4.6.0",
+    "copyfiles": "^2.1.0",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  }
 }

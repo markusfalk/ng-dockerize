@@ -3,7 +3,7 @@ import {
   apply, branchAndMerge, mergeWith, Rule, SchematicContext, template, Tree, url
 } from '@angular-devkit/schematics';
 
-import { readJsonFile } from './utils/fs';
+import { readJsonFile } from '../utils/fs';
 
 export function ngDockerize(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {

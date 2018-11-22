@@ -16,12 +16,6 @@ module.exports = {
       whitelist: ['schematics-utilities']
     })
   ],
-  // resolve: {
-  //   modules: [
-  //     "node_modules",
-  //     path.resolve(__dirname, "src")
-  //   ]
-  // },
   plugins: [
     new CopyWebpackPlugin(
       [

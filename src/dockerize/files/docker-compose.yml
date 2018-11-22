@@ -1,5 +1,4 @@
-# equivalent docker commands:
-# docker pull
+# equivalent docker command:
 # docker run --rm -d -p <%= angularport %>:<%= angularport %> <%= registry %>:<%= dockerport %>/<%= username ? username + '/' : '' %><%= packagename %>:<%= tag %>
 
 version: '3.7'

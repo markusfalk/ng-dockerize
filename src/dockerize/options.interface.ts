@@ -5,5 +5,5 @@ export interface DockerizeOptions {
   push: boolean;
   registry: string;
   username: string;
-  version: string;
+  tag: string;
 }

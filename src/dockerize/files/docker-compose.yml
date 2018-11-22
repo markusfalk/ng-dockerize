@@ -1,7 +1,11 @@
+# equivalent docker commands:
+# docker pull
+# docker run --rm -d -p <%= angularport %>:<%= angularport %> <%= registry %>:<%= dockerport %>/<%= username ? username + '/' : '' %><%= packagename %>:<%= tag %>
+
 version: '3.7'
 
 services:
   angular:
-    image: <%= registry %>:<%= dockerport %>/<%= packagename %>:<%= version %>
+    image: <%= registry %>:<%= dockerport %>/<%= username ? username + '/' : '' %><%= packagename %>:<%= tag %>
     ports:
       - "<%= angularport %>:<%= angularport %>"

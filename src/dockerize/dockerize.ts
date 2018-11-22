@@ -11,11 +11,8 @@ export function ngDockerize(_options: any): Rule {
 
     let packageJson = {
       name: _options.packagename,
-      version: _options.version
+      version: _options.tag
     };
-
-    // let packagename = _options.packagename;
-    // let version = _options.version;
 
     if (!_options.packagename || !_options.version) {
       packageJson = { ...readJsonFile<{name: string, version: string}>(tree, './package.json') };
@@ -24,11 +21,11 @@ export function ngDockerize(_options: any): Rule {
     let options: DockerizeOptions = {
       angularport: _options.angularport || 9999,
       dockerport: _options.dockerport || 5000,
-      packagename: packageJson.name,
+      packagename: _options.packagename || packageJson.name,
       push: _options.push || true,
       registry: _options.registry || 'localhost',
       username: _options.username || '',
-      version: packageJson.version,
+      tag: _options.tag || packageJson.version,
     };
 
     const templateSource = apply(

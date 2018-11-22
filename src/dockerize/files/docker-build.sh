@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# docker build -t <registry:port>/<username>/<image> .
-docker build -t <%= registry %>:<%= dockerport %>/<%= username %>/<%= packagename %> .
+# docker build -t <registry:dockerport>/<username>/<packagename>:<tag> .
+docker build -t <%= registry %>:<%= dockerport %>/<%= username ? username + '/' : '' %><%= packagename %>:<%= tag %> .
 
-# docker push <registry:port>/<username>/<%= packagename %>
-<% if(push) { %>docker push <%= registry %>:<%= dockerport %>/<%= username %>/<%= packagename %><% } %>
+# docker push <registry:dockerport>/<username>/<packagename>:<tag>
+<% if(!push) { %>\# <% } %>docker push <%= registry %>:<%= dockerport %>/<%= username ? username + '/' : '' %><%= packagename %>:<%= tag %>

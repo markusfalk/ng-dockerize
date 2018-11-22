@@ -2,6 +2,8 @@
 
 This schematic adds configuration files and shell scripts to configure and run your angular project in a docker container.
 
+<img src="ng-dockerize.gif" alt=""/>
+
 ## tl;dr (Why?)
 
 The original goal of this project is to give back-end developers a running angular front-end during development without them having to clone the front-end repository (assuming you have different repositories for back-end and front-end code), manage node versions, npm install everything, compile angular and so on. Or in short - deal with all the front-end technologies and compilation steps.
